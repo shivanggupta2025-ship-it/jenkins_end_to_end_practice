@@ -22,12 +22,10 @@ pipeline {
         }
 
         stage('Deploy') {
-            steps {
-                bat '''
-                mkdir myapp
-                xcopy /E /I * myapp
-                '''
-            }
-        }
+    steps {
+        cleanWs()
+        bat 'echo Clean deploy'
+    }
+}
     }
 }
