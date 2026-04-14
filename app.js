@@ -10,3 +10,4 @@ console.log("Version 8 deployed 🚀");
 console.log("Version 9 deployed 🚀");
 console.log("Version 10 deployed 🚀");
 console.log("Version 11 deployed 🚀");
+console.log("Version 12 deployed 🚀");
