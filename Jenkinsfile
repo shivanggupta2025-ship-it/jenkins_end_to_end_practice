@@ -1,26 +1,31 @@
-pipeline{
+pipeline {
     agent any
-    stages{
-        stage('Checkout'){
-            steps{
-                checout scm
+
+    stages {
+
+        stage('Checkout') {
+            steps {
+                checkout scm
             }
         }
-        stage('Install'){
-            steps{
-                sh 'npm install'
+
+        stage('Install') {
+            steps {
+                bat 'npm install'
             }
         }
-        stage('Build'){
-            steps{
-                sh 'echo "Build step..."'
+
+        stage('Build') {
+            steps {
+                bat 'echo Build step...'
             }
         }
-        stage('Deploy'){
-            steps{
-                sh '''
-                mkdir -p /var/www/html/myapp
-                cp -r * /var/www/html/myapp
+
+        stage('Deploy') {
+            steps {
+                bat '''
+                mkdir myapp
+                xcopy /E /I * myapp
                 '''
             }
         }
