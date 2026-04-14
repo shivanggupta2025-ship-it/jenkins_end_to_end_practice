@@ -17,7 +17,7 @@ pipeline{
             }
         }
         stage('Deploy'){
-            stps{
+            steps{
                 sh '''
                 mkdir -p /var/www/html/myapp
                 cp -r * /var/www/html/myapp
